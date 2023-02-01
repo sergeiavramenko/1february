@@ -1,7 +1,6 @@
 import React from "react";
 import n from './NavBar.module.css';
 
-
 const NavBar = (props) => {
     return (
     <div className={n.nav}> 
@@ -11,14 +10,14 @@ const NavBar = (props) => {
       <div className={ `${n.item} ${n.active} ` }>
         <a href="/dialogs">Messages</a>
       </div>
-      <div className={n.item}>
-        <a>News</a>
+      <div className={ `${n.item} ${n.active} ` }>
+        <a href="/news">News</a>
       </div>
       <div className={n.item}>
-        <a>Music</a>
+        <a href="/music">Music</a>
       </div>
       <div className={n.item}>
-        <a>Settings</a>
+        <a href="/settings">Settings</a>
       </div>
    </div >
     );

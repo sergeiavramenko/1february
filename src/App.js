@@ -6,36 +6,31 @@ import Profile from './Component/Profile/Profile';
 import Dialogs from "./Component/Dialogs/Dialogs";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import React from "react";
+import News from "./Component/News/News";
+import Music from "./Component/Music/Music";
+import Settings from "./Component/Settings/Settings";
 
 function App(props) {
   return (
     <BrowserRouter>
-    
-                 
                 <div className='app-wrapper'>
               <Header/>
               <NavBar/>
 
+
               <div className='app-wrapper-content'>
                   <Routes>
-
                         <Route path="/profile" element={<Profile />}/> 
                         <Route path="/dialogs" element={<Dialogs />}/>
+                      <Route path="/news" element={<News />}/>
+                      <Route path="/music" element={<Music />}/>
+                      <Route path="/settings" element={<Settings />}/>
+
+
                      </Routes>
-                                      
-
-
-
-
-
               </div>
-
-
           </div>
-      
-      </BrowserRouter>    
-                        
-
+      </BrowserRouter>
   );
 }
 
