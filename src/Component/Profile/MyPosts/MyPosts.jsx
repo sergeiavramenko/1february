@@ -8,13 +8,13 @@ const MyPosts = () => {
         <div >
             My post
             <div >
-               <textare> </textare>
+               <textare>hggg </textare>
                <button>Add post</button>
                <button>Remove</button>
-            </div>
+            </div> 
             <div className={p.post}>
-                <Post message="Hi,how are you"/>
-                <Post message="Its my first post" />
+                <Post message="Its my first post" let="Its the first page" />
+                <Post message="Its my first post" let="Its the second page"/>
                 
                 
                 
