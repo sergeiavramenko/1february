@@ -2,7 +2,7 @@ import React from "react";
 import n from './NavBar.module.css';
 console.log(n);
 
-const NavBar = () => {
+const NavBar = (props) => {
     return (
     <div className={n.nav}> 
       <div className={n.item}>

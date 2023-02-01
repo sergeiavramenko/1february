@@ -13,10 +13,10 @@ const MyPosts = () => {
                <button>Remove</button>
             </div>
             <div className={p.post}>
-                <Post />
-                <Post />
+                <Post message="Hi,how are you"/>
+                <Post message="Its my first post" />
                 
-                <Post />
+                
                 
                 
             </div>

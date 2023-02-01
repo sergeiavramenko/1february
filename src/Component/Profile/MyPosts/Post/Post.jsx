@@ -1,19 +1,24 @@
 import React from "react";
 import p from './Post.module.css';
 
-const Post = () => {
+const Post = (props) => {
     return (
+        
 
 
         <div className={p.item}>
             <img src="https://upload.wikimedia.org/wikipedia/ru/e/eb/Ralf_logo.jpg" />
-            Post 1
-            <div><span>Like</span></div>
-            <div><span>DizLike</span></div>
-        </div>
+           {props.message}
+            <div><span> 1</span></div>
+            <div><span>20</span></div>
+
+
+
+
+        </div> 
 
 
 
     );
 }
-export default Post;
+export default Post; 
