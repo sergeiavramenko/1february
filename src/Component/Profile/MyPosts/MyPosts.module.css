@@ -1,3 +1,6 @@
+.postsBlock {
+    padding: 10px;
+}
 .post {
-    background-color:rgb(119, 162, 129);
+    margin-top: 10px;
 }
