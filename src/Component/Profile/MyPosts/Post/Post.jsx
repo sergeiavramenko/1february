@@ -10,10 +10,10 @@ const Post = (props) => {
         <div className={p.item}>
             <img src="https://upload.wikimedia.org/wikipedia/ru/e/eb/Ralf_logo.jpg" />
 
-            <div><span> like</span> </div>
+            <div><span> {props.likesCount}</span> </div>
 
             <div>
-
+                {props.message}
             </div>
 
 
