@@ -11,13 +11,7 @@ import Music from "./Component/Music/Music";
 import Settings from "./Component/Settings/Settings";
 
 function App(props) {
-    /*let posts = [
-        {name:"Dimasdasdasd", id:"1",likesCount:112},
-        {name:"Andr", id:"2",likesCount:90},
-        {name:"Andr", id:"2",likesCount:30},
-        {name:"Andr", id:"2",likesCount:1},
-        {name:"Andr", id:"2",likesCount:18}
-    ]*/
+
   return (
     <BrowserRouter>
                 <div className='app-wrapper'>
@@ -27,10 +21,10 @@ function App(props) {
 
               <div className='app-wrapper-content'>
                   <Routes>
-                        <Route path="/profile" element={<Profile posts={props.posts}/>}/>
-                        <Route path="/dialogs/*" element={<Dialogs messageData={props.messageData} dialosData={props.dialosData}/>}/>
+                        <Route path="/profile" element={<Profile profilePage={props.appState.profilePage}/>}/>
+                        <Route path="/dialogs/*" element={<Dialogs dialogsPage={props.appState.dialogPage} />}/>
                       <Route path="/news" element={<News />}/>
-                      <Route path="/music" element={<Music />}/>
+                      <Route path="/music/*" element={<Music music={props.appState.music}/>}/>
                       <Route path="/settings" element={<Settings />}/>
 
 

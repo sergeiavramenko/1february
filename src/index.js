@@ -3,41 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import state from "./Component/Redux/State";
 
-let posts = [
-    {name:"Dimasdasdasd", id:"1",likesCount:112},
-    {name:"Andr", id:"2",likesCount:90},
-    {name:"Andr", id:"2",likesCount:30},
-    {name:"Andr", id:"2",likesCount:1},
-    {name:"Andr", id:"2",likesCount:18}
-] ;
-let dialosData = [
-    {name: "Dim", id: "1"},
-    {name: "Andr", id: "2"},
-    {name: "Sveta", id: "3"},
-    {name: "Sasha", id: "4"},
-    {name: "Kirill", id: "5"},
-    {name: "Olga", id: "6"},
-    {name: "Sasha", id: "4"},
-    {name: "Kirill", id: "5"},
-    {name: "Olga", id: "6"}
-];
-let messageData = [
-    {name: "Hi, my frend"},
-    {name: "Im ok"},
-    {name: "Im ok"},
-    {name: "Ich din du bist"},
-    {name: "Im ok"},
-    {name: "Im ok"},
-    {name: "Ich din du bist"},
-    {name: "Im ok"},
-    {name: "Im ok"},
-    {name: 12345 }];
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App posts={posts} dialosData={dialosData} messageData={messageData} />
+    <App appState={state} />
   </React.StrictMode>
 );
 
