@@ -11,7 +11,8 @@ let state = {
             {name: "Andr", id: "2", likesCount: 30},
             {name: "Andr", id: "2", likesCount: 1},
             {name: "Andr", id: "2", likesCount: 18}
-        ]
+        ],
+        newPostText: "IT-Incubator"
     },
     dialogPage: {
         dialosData: [
@@ -55,11 +56,19 @@ let state = {
 
 }
 
-export let addPost = (postMessage) => {
-    let newPost =  {name: postMessage, id: "8", likesCount: 0}
+export let addPost = () => {
+    let newPost =  {name:state.profilePage.newPostText , id: "8", likesCount: 0}
 
 
         state.profilePage.posts.push(newPost)
+    state.profilePage.newPostText = "";
+    rerenderEntireTree(state);
+}
+export let updateNewPostText = (newText) => {
+
+
+
+    state.profilePage.newPostText = newText;
     rerenderEntireTree(state);
 }
 
