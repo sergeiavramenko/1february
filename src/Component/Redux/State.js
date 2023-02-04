@@ -1,5 +1,6 @@
 import React from "react";
-
+const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
+const ADD_POST = "ADD-POST";
 let store = {
     _state: {
         profilePage: {
@@ -107,6 +108,18 @@ let store = {
     }
 
 
+}
+export const addPostActionCreator = () => {
+
+    return(
+        {type: ADD_POST}
+    )
+}
+export const updateNewPostTextActionCreator = (text) => {
+
+    return(
+        {type: UPDATE_NEW_POST_TEXT, newText: text}
+    )
 }
 
 
