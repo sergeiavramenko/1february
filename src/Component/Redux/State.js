@@ -1,42 +1,31 @@
 import React from "react";
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
 const ADD_POST = "ADD-POST";
+const UPDATE_NEW_MESSAGE_BODY = "UPDATE_NEW_MESSAGE_BODY";
+const SEND_MESSAGE = "SEND_MESSAGE";
+
 let store = {
     _state: {
         profilePage: {
             posts: [
                 {name: "Dimasdasdasd", id: "1", likesCount: 112},
-                {name: "Andr", id: "2", likesCount: 90},
-                {name: "Andr", id: "2", likesCount: 30},
-                {name: "Andr", id: "2", likesCount: 1},
-                {name: "Andr", id: "2", likesCount: 18}
+                {name: "Andr", id: "2", likesCount: 90}
             ],
             newPostText: "IT-Incubator"
         },
         dialogPage: {
             dialosData: [
-                {name: "Dimasdadas", id: "1"},
-                {name: "Andr", id: "2"},
-                {name: "Sveta", id: "3"},
-                {name: "fgdgdgdgdfgdfg", id: "4"},
-                {name: "Kirill", id: "5"},
-                {name: "Olgsfdsfdsa", id: "6"},
-                {name: "Sasha", id: "7"},
-                {name: "Kirill", id: "8"},
-                {name: "Olgasadsad", id: "9"}
+                {name: "Dimasdadas", id: 1},
+                {name: "Andr", id: 2},
+                {name: "Sveta", id: 3},
+                {name: "Andr", id: 2},
             ],
             messageData: [
                 {name: "Hi, my frend"},
                 {name: "Im ok"},
-                {name: "Im ok"},
-                {name: "Ich din du bist"},
-                {name: "Im dfgdfgdfgdgok"},
-                {name: "Im ok"},
-                {name: "Ich din du bist"},
-                {name: "Im ok"},
-                {name: "Im ok"},
-                {name: 12345}
-            ]
+
+            ],
+            newMessageBody: "",
         },
         music: {
             JoeSatriani: [
@@ -65,50 +54,49 @@ let store = {
                         src="data:image/jpeg;base64,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"/>
                 },
             ]
-        },
+        }
+    },
+    _callSubscriber() {
+        console.log("State was changed");
+    },
+    getState() {
+        return this._state;
     },
     subscribe(observer) {
         this._callSubscriber = observer;
 
     },
-    getState() {
-        return this._state;
-    },
-    _callSubscriber() {
-        console.log("State was changed");
-    },
-
-/*    addPost() {
-        let newPost = {name: this._state.profilePage.newPostText, id: "8", likesCount: 0}
-
-
-        this._state.profilePage.posts.push(newPost)
-        this._state.profilePage.newPostText = "";
-        this._callSubscriber(this._state);
-    },
-    updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText;
-        this._callSubscriber(this._state);
-
-    },*/
     dispatch(action) {
-        if (action.type === "ADD-POST") ;
-        { let newPost = {name: this._state.profilePage.newPostText, id: "8", likesCount: 0}
+        if (action.type === ADD_POST) ;
+        { let newPost = {name: this._state.profilePage.newPostText, id: "8", likesCount: 1};
 
 
             this._state.profilePage.posts.push(newPost)
             this._state.profilePage.newPostText = "";
             this._callSubscriber(this._state);
-        } if (action.type === "UPDATE-NEW-POST-TEXT") ;
+        } if (action.type === UPDATE_NEW_POST_TEXT) ;
         {
             this._state.profilePage.newPostText = action.newText;
             this._callSubscriber(this._state);
 
+        } if (action.type === SEND_MESSAGE) {
+            let body = this._state.dialogPage.newMessageBody;
+
+            this._state.dialogPage.newMessageBody = "";
+            this._state.dialogPage.dialosData.messageData.push({ name:body})
+            this._callSubscriber(this._state);
+
+        }  if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+            this._state.dialogPage.newMessageBody = action.body;
+            this._callSubscriber(this._state);
+
+    } else {
+            return console.log(12);
         }
-    }
 
 
-}
+
+} }
 export const addPostActionCreator = () => {
 
     return(
@@ -121,7 +109,23 @@ export const updateNewPostTextActionCreator = (text) => {
         {type: UPDATE_NEW_POST_TEXT, newText: text}
     )
 }
+export const updateNewMessageBodyCreator = (body) => {
+
+    return(
+        {type:UPDATE_NEW_MESSAGE_BODY , newText: body}
+    )
+}
+export const sendMessageCreator = () => {
+
+    return(
+        {type: SEND_MESSAGE}
+    )
+}
+
 
 
 export default store;
 window.state = store;
+
+export class sendMessage {
+}

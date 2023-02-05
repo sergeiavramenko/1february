@@ -5,10 +5,10 @@ import ReactDOM from 'react-dom/client';
 import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-let rerenderEntireTree = (aAa) => {
+let rerenderEntireTree = (state) => {
     root.render(
         <React.StrictMode>
-            <App  appState={aAa} dispatch={store.dispatch.bind(store)}  />
+            <App  appState={state}  dispatch={store.dispatch.bind(store)}  />
         </React.StrictMode>
     );
 }
