@@ -1,8 +1,8 @@
 import React from "react";
-const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
-const ADD_POST = "ADD-POST";
-const UPDATE_NEW_MESSAGE_BODY = "UPDATE_NEW_MESSAGE_BODY";
-const SEND_MESSAGE = "SEND_MESSAGE";
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
+import musicReducer from "./music";
+
 
 let store = {
     _state: {
@@ -11,7 +11,7 @@ let store = {
                 {name: "Dimasdasdasd", id: "1", likesCount: 112},
                 {name: "Andr", id: "2", likesCount: 90}
             ],
-            newPostText: "IT-Incubator"
+            newPostText: "IT-Incubatorff"
         },
         dialogPage: {
             dialosData: [
@@ -25,7 +25,7 @@ let store = {
                 {name: "Im ok"},
 
             ],
-            newMessageBody: "",
+            newMessageBody: "Let my down",
         },
         music: {
             JoeSatriani: [
@@ -67,60 +67,15 @@ let store = {
 
     },
     dispatch(action) {
-        if (action.type === ADD_POST) ;
-        { let newPost = {name: this._state.profilePage.newPostText, id: "8", likesCount: 1};
-
-
-            this._state.profilePage.posts.push(newPost)
-            this._state.profilePage.newPostText = "";
-            this._callSubscriber(this._state);
-        } if (action.type === UPDATE_NEW_POST_TEXT) ;
-        {
-            this._state.profilePage.newPostText = action.newText;
-            this._callSubscriber(this._state);
-
-        } if (action.type === SEND_MESSAGE) {
-            let body = this._state.dialogPage.newMessageBody;
-
-            this._state.dialogPage.newMessageBody = "";
-            this._state.dialogPage.dialosData.messageData.push({ name:body})
-            this._callSubscriber(this._state);
-
-        }  if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-            this._state.dialogPage.newMessageBody = action.body;
-            this._callSubscriber(this._state);
-
-    } else {
-            return console.log(12);
-        }
+        this._state.profilePage = profileReducer(this._state.profilePage, action);         /*//posts,newPosttext*/
+        this._state.dialogPage = dialogsReducer(this._state.dialogPage, action);              /*dialosData, messageData*/
+        this._state.music = musicReducer(this._state.profilePage, action);
+        this._callSubscriber(this._state);
+    }
+    }
 
 
 
-} }
-export const addPostActionCreator = () => {
-
-    return(
-        {type: ADD_POST}
-    )
-}
-export const updateNewPostTextActionCreator = (text) => {
-
-    return(
-        {type: UPDATE_NEW_POST_TEXT, newText: text}
-    )
-}
-export const updateNewMessageBodyCreator = (body) => {
-
-    return(
-        {type:UPDATE_NEW_MESSAGE_BODY , newText: body}
-    )
-}
-export const sendMessageCreator = () => {
-
-    return(
-        {type: SEND_MESSAGE}
-    )
-}
 
 
 

@@ -1,5 +1,6 @@
 import state from "./State";
 
-const music = (state , action) => {
+export const musicReducer = (state , action) => {
     return state;
 }
+export default musicReducer;
