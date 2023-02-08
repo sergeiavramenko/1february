@@ -1,7 +1,22 @@
 import state from "./State";
 const UPDATE_NEW_MESSAGE_BODY = "UPDATE_NEW_MESSAGE_BODY";
 const SEND_MESSAGE = "SEND_MESSAGE";
- const dialogsReducer = (state , action) => {
+
+let initialState = {
+    dialosData: [
+        {name: "Dimasdadas", id: 1},
+        {name: "Andr", id: 2},
+        {name: "Sveta", id: 3},
+        {name: "Andr", id: 2},
+    ],
+    messageData: [
+        {name: "Hi, my frend"},
+        {name: "Im ok"},
+
+    ],
+    newMessageBody: "Let my down",
+}
+const dialogsReducer = (state = initialState , action) => {
     switch (action.type) {
         case SEND_MESSAGE :
         let body = state.newMessageBody;

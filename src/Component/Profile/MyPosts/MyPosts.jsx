@@ -6,12 +6,12 @@ import {addPostActionCreator, updateNewPostTextActionCreator} from "../../Redux/
 
 
 const MyPosts = (props) => {
-let newMessageBod = props.newPostText;
-
-    const PostsElement = props.posts.map( ex => <Post message={ex.name} likesCount={ex.likesCount} /> )
 
 
-    const Click = () => {
+    let PostsElement = props.posts.map( ex => <Post message={ex.name} likesCount={ex.likesCount} /> )
+
+    let newMessageBod = props.newPostText;
+    let Click = () => {
 
         props.dispatch(addPostActionCreator());
 
