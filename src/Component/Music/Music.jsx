@@ -5,7 +5,7 @@ import Post from "../Profile/MyPosts/Post/Post";
 
 const Music = (props) => {
     let PostsElement = props.music.JoeSatriani.map( ex => <JoeSatrisni id={ex.id} name={ex.name} album={ex.album} /> )
-debugger;
+
     return (
     <div >
         {PostsElement}

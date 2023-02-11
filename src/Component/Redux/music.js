@@ -1,4 +1,4 @@
-import state from "./State";
+
 let initialState = {
     JoeSatriani: [
         {
@@ -27,7 +27,7 @@ let initialState = {
         },
     ]
 }
-export const musicReducer = (state , action) => {
+export const musicReducer = (state = initialState , action) => {
     return state;
 }
 export default musicReducer;

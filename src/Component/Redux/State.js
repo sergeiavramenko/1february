@@ -1,3 +1,4 @@
+/*
 import React from "react";
 import profileReducer from "./profile-reducer";
 import dialogsReducer from "./dialogs-reducer";
@@ -67,8 +68,8 @@ let store = {
 
     },
     dispatch(action) {
-        this._state.profilePage = profileReducer(this._state.profilePage, action);         /*//posts,newPosttext*/
-        this._state.dialogPage = dialogsReducer(this._state.dialogPage, action);              /*dialosData, messageData*/
+        this._state.profilePage = profileReducer(this._state.profilePage, action);         /!*!//posts,newPosttext*!/
+        this._state.dialogPage = dialogsReducer(this._state.dialogPage, action);              /!*dialosData, messageData*!/
         this._state.music = musicReducer(this._state.profilePage, action);
         this._callSubscriber(this._state);
     }
@@ -83,4 +84,4 @@ export default store;
 window.state = store;
 
 export class sendMessage {
-}
+}*/
