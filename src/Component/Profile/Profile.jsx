@@ -2,6 +2,7 @@ import React from "react";
 import MyPosts from "./MyPosts/MyPosts";
 import p from './Profile.module.css';
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
+import MyPostsConteiner from "./MyPosts/MyPostsConteiner";
 
 
 const Profile = (props) => {
@@ -12,7 +13,7 @@ const Profile = (props) => {
             <ProfileInfo/>
 
 
-            <MyPosts posts={props.profilePage.posts} newPostText={props.profilePage.newPostText}  dispatch={props.dispatch}/>
+            <MyPostsConteiner store={props.store}  dispatch={props.dispatch}/>
 
 
         </div>

@@ -6,7 +6,7 @@ const ADD_POST = "ADD-POST";
          {name: "Dimasdasdasd", id: "1", likesCount: 112},
          {name: "Andr", id: "2", likesCount: 90}
      ],
-     newPostText: "IT-Incubatorff"
+     newPostText: "IT-Incubato"
  }
 
 

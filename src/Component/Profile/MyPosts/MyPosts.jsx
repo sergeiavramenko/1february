@@ -10,16 +10,17 @@ const MyPosts = (props) => {
 
     let PostsElement = props.posts.map( ex => <Post message={ex.name} likesCount={ex.likesCount} /> )
 
-    let newMessageBod = props.newPostText;
+    let newPostElement = React.createRef();
     let Click = () => {
 
-        props.dispatch(addPostActionCreator());
+        props.click();
 
 
     }
     let onPostChange = (e) => {
-        let text = e.target.value;
-        props.dispatch(updateNewPostTextActionCreator(text));
+        let text = newPostElement.current.value;
+
+        props.updateNewPostText(text);
     }
 
     return (
@@ -28,7 +29,7 @@ const MyPosts = (props) => {
             <h3>My post </h3>
             <div>
                 <div>
-                    <textarea onChange={onPostChange}  value={newMessageBod} />
+                    <textarea onChange={onPostChange}  ref={newPostElement} value={props.newPostText} />
                 </div>
                 <div>
                     <button onClick={Click }>Add post</button>
