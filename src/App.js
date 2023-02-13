@@ -25,7 +25,7 @@ function App(props) {
                         <Route path="/profile" element={<Profile  store={props.store} dispatch={props.dispatch} />}/>
                         <Route path="/dialogs/*" element={<DialogsConteiner store={props.store}  dispatch={props.dispatch}/>}/>
                       <Route path="/news" element={<News />}/>
-                      <Route path="/music/" element={<Music dispatch={props.dispatch} music={props.appState.music }/>}/>
+                      <Route path="/music/" element={<Music dispatch={props.dispatch} music={props.store.getState().music }/>}/>
                       <Route path="/settings" element={<Settings />}/>
 
 

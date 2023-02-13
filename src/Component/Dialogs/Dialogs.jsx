@@ -1,11 +1,11 @@
 import React from "react";
-import App from "../../App";
+
 import d from "./Dialogs.module.css"
 
 import DialogItem from "./Dialogitem/Dialogitem";
 import MessageItem from "./Massegeitem/Messageitem";
 
-import {sendMessageCreator, updateNewMessageBodyCreator} from "../Redux/dialogs-reducer";
+
 
 
 
