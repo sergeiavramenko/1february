@@ -9,6 +9,7 @@ import React from "react";
 import News from "./Component/News/News";
 import Music from "./Component/Music/Music";
 import Settings from "./Component/Settings/Settings";
+import DialogsConteiner from "./Component/Dialogs/DialogsConteiner";
 
 function App(props) {
 
@@ -22,7 +23,7 @@ function App(props) {
               <div className='app-wrapper-content'>
                   <Routes>
                         <Route path="/profile" element={<Profile  store={props.store} dispatch={props.dispatch} />}/>
-                        <Route path="/dialogs/*" element={<Dialogs store={props.store} dialogsPage={props.appState.dialogsPage} dispatch={props.dispatch}/>}/>
+                        <Route path="/dialogs/*" element={<DialogsConteiner store={props.store}  dispatch={props.dispatch}/>}/>
                       <Route path="/news" element={<News />}/>
                       <Route path="/music/" element={<Music dispatch={props.dispatch} music={props.appState.music }/>}/>
                       <Route path="/settings" element={<Settings />}/>
