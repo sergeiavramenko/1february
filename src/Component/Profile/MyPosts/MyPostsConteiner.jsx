@@ -20,10 +20,10 @@ const MyPostsConteiner = (props) => {
                     let onPostChange = (text) => {
                         store.dispatch(updateNewPostTextActionCreator(text));
                     }
-                    return                    <MyPosts posts={state.profilePage.posts}
+                    return              <MyPosts posts={state.profilePage.posts}
                              newPostText={state.profilePage.newPostText}
                              updateNewPostText={onPostChange} click={Click}/>
-                } 
+                }
         }
         </StoreContext.Consumer>
     );
