@@ -3,10 +3,11 @@ import reportWebVitals from './reportWebVitals';
 import store from "./Component/Redux/reduxstore";
 import ReactDOM from 'react-dom/client';
 import App from "./App";
-import StoreContext, {Provider} from "./StoreContecst";
+import {Provider} from "react-redux";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-let rerenderEntireTree = (state) => {
+let rerenderEntireTree = () => {
     root.render(
 
         <React.StrictMode>
