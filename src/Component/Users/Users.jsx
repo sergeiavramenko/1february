@@ -3,14 +3,16 @@ import s from './users.moule.css'
 import axios from "axios";
 import userPhoto from "../../userspng.jpg"
 let Users = (props) => {
+    let getUsers = () =>
+    {
     if (props.users.length === 0) {
-
         axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
             props.setUsers(response.data.items)
-        })
-
+        });
+    }
     }
     return <div>
+        <button onClick={getUsers} >get users</button>
         {
             props.users.map( u => <div key={u.id}>
                 <span>
