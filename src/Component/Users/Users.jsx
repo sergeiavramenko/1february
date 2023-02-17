@@ -1,49 +1,20 @@
 import React from "react";
-import styles from './users.moule.css'
+import s from './users.moule.css'
+import axios from "axios";
+import userPhoto from "../../userspng.jpg"
 let Users = (props) => {
     if (props.users.length === 0) {
-    props.setUsers([
-        {
-            id: 1,
-            photoUrl: "https://st4.depositphotos.com/2760050/24301/i/600/depositphotos_243011410-stock-photo-man-with-bristle-on-calm.jpg",
-            followed: true,
-            fullName: "Sergei",
-            status: "im from bel",
-            location: {city: "Minsk", country: "Belarus"}
-        },
-        {
-            id: 1,
-            photoUrl: "https://st4.depositphotos.com/2760050/24301/i/600/depositphotos_243011410-stock-photo-man-with-bristle-on-calm.jpg",
 
-            followed: false,
-            fullName: "ddsfds",
-            status: "imzzzz from bel",
-            location: {city: "Minsdfdssk", country: "22Bsw22elarus"}
-        },
-        {
-            id: 1,
-            photoUrl: "https://st4.depositphotos.com/2760050/24301/i/600/depositphotos_243011410-stock-photo-man-with-bristle-on-calm.jpg",
+        axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
+            props.setUsers(response.data.items)
+        })
 
-            followed: true,
-            fullName: "dsfsdfds",
-            status: "izxczxm from bel",
-            location: {city: "Mindsdssk", country: "1111Belarus"}
-        },
-        {
-            id: 1,
-            photoUrl: "https://st4.depositphotos.com/2760050/24301/i/600/depositphotos_243011410-stock-photo-man-with-bristle-on-calm.jpg",
-
-            followed: false,
-            fullName: "zxzxSergei",
-            status: "i11111m from bel",
-            location: {city: "Mdsfdsinsk", country: "4555Belarus"}
-        } ])
     }
     return <div>
         {
             props.users.map( u => <div key={u.id}>
                 <span>
-                    <div> <img src={u.photoUrl} className={styles.userPhoto} alt="sadas"/></div>
+                    <div > <img  src={u.photos.small != null? u.photos.small : userPhoto} className={s.userPhoto} alt="sadas"/></div>
                     <div>
                         {u.followed ?
                             <button onClick={() => {props.unfollow(u.id)} } >Unfollow</button> :
@@ -54,10 +25,10 @@ let Users = (props) => {
                     </div>
                 </span>
                 <span>
-                    <span> <div>{u.fullName}</div>
+                    <span> <div>{u.name}</div>
                         <div>{u.status}</div></span>
-                    <span> <div>{u.location.city}</div>
-                        <div>{u.location.country}</div></span>
+                    <span> <div>{"u.location.city"}</div>
+                        <div>{"u.location.country"}</div></span>
                 </span>
 
             </div>)
