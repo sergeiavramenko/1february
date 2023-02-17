@@ -10,6 +10,8 @@ import News from "./Component/News/News";
 import Music from "./Component/Music/Music";
 import Settings from "./Component/Settings/Settings";
 import DialogsConteiner from "./Component/Dialogs/DialogsConteiner";
+import UsersConteiner from "./Component/Users/UsersConteiner";
+
 
 function App(props) {
 
@@ -23,6 +25,7 @@ function App(props) {
               <div className='app-wrapper-content'>
                   <Routes>
                         <Route path="/profile" element={<Profile   />}/>
+                      <Route path="/users" element={<UsersConteiner/> }/>
                         <Route path="/dialogs/*" element={<DialogsConteiner   />}/>
                       <Route path="/news" element={<News />}/>
                       <Route path="/music/" element={<Music />}/>

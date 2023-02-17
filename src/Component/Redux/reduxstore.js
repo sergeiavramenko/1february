@@ -2,12 +2,14 @@ import {combineReducers, legacy_createStore, legacy_createStore as createStore} 
 import profileReducer from "./profile-reducer";
 import dialogsReducer from "./dialogs-reducer";
 import musicReducer from "./music";
+import usersReducer from "./users-reducer";
 
 
 let reducers = combineReducers({
     profilePage:profileReducer,
     dialogsPage:dialogsReducer,
-    music:musicReducer
+    music:musicReducer,
+    usersPage: usersReducer
 })
 
 let store = createStore(reducers);
