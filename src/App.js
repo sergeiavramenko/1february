@@ -2,8 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './Component/Header/Header';
 import NavBar from './Component/NavBar/NavBar';
-import Profile from './Component/Profile/Profile';
-import Dialogs from "./Component/Dialogs/Dialogs";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import React from "react";
 import News from "./Component/News/News";
@@ -11,6 +9,7 @@ import Music from "./Component/Music/Music";
 import Settings from "./Component/Settings/Settings";
 import DialogsConteiner from "./Component/Dialogs/DialogsConteiner";
 import UsersConteiner from "./Component/Users/UsersConteiner";
+import ProfileConteiner from "./Component/Profile/ProfileConteiner";
 
 
 function App(props) {
@@ -24,7 +23,7 @@ function App(props) {
 
               <div className='app-wrapper-content'>
                   <Routes>
-                        <Route path="/profile" element={<Profile   />}/>
+                        <Route path="/profile/*" element={<ProfileConteiner   />}/>
                       <Route path="/users" element={<UsersConteiner/> }/>
                         <Route path="/dialogs/*" element={<DialogsConteiner   />}/>
                       <Route path="/news" element={<News />}/>
