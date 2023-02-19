@@ -10,6 +10,7 @@ import Settings from "./Component/Settings/Settings";
 import DialogsConteiner from "./Component/Dialogs/DialogsConteiner";
 import UsersConteiner from "./Component/Users/UsersConteiner";
 import ProfileConteiner from "./Component/Profile/ProfileConteiner";
+import HeaderContainer from "./Component/Header/HeaderContainer";
 
 
 function App(props) {
@@ -17,7 +18,7 @@ function App(props) {
   return (
     <BrowserRouter>
                 <div className='app-wrapper'>
-              <Header/>
+              <HeaderContainer/>
               <NavBar/>
 
 

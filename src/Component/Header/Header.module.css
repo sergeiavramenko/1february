@@ -1,8 +1,12 @@
 .header {
     grid-area: h;
-    background-color:aquamarine; 
+    background-color:darkseagreen;
+
   }
   .header img {
-    width: 120px;
-    height: 60px;
+    width: 260px;
+    height: 260px;
+  }
+  .nav{
+      float: right;
   }
